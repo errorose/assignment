@@ -38,6 +38,17 @@
 
     <script>
       // TODO: 문제 조건을 만족하는 js 코드 작성
+      let music = document.querySelectorAll('span');
+      
+      music.forEach(function(text){
+        text.style.color = 'blueviolet';
+        text.style.fontWeight = 'bold';
+      });
+
+      let container = document.querySelector('.container');
+      container.style.backgroundColor = '#eee';
+      container.style.textAlign = 'center';
+
     </script>
   </body>
 </html>
