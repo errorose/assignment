@@ -33,30 +33,33 @@
 
       function cal() {
         let value1 = parseInt(document.getElementById('value1').value);
+        // console.log(value1);
         let value2 = parseInt(document.getElementById('value2').value);
         let operator = document.getElementById('operator').value;
-
-        let inputVal;
+        let result;
 
         switch(operator){
-          case '+':
-            inputVal = value1 + value2;
-            break;
-          case '-':
-            inputVal = value1 - value2;
-            break;
-          case '*':
-            inputVal = value1 * value2;
-            break;
-          case '/':
-            inputVal = value1 / value2;
-            break;
-          default:
-            inputVal = 'error!';
+            case '' :
+                alert('값이 입력되지 않았습니다!');
+                break;
+            case '+' :
+                result = value1 + value2;
+                break;
+            case '-' :
+                result = value1 - value2;
+                break;
+            case '*' :
+                result = value1 * value2;
+                break;
+            case '/' :
+                result = value1 / value2;
+                break;
+            default :
+                result = 'error';
         }
 
-        document.getElementById('result').value = inputVal;
-      };
+        document.getElementById('result').value = result;
+      }
 
       // [초기화] 버튼 클릭시 reset() 함수가 실행되도록 인라인 방식으로 미리 설정해 두었습니다.
 
@@ -64,7 +67,7 @@
         document.getElementById('value1').value = '';
         document.getElementById('value2').value = '';
         document.getElementById('operator').value = '';
-        document.getElementById('inputVal').value = '';
+        document.getElementById('result').value = '';
       }
     </script>
   </body>
