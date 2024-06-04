@@ -50,19 +50,20 @@
       //    - 이 프로젝트에서는 10진 코드(r, g, b) 방식을 사용합니다.
       //    - rgb(r, g, b)에서 red, green, blue 숫자 범위는 0이상 255이하 입니다. 즉, 각 색상마다 0 ~ 255 사이의 랜덤한 값을 생성해야 합니다.
 
-      let btn = document.querySelector('button');
-      let h2 = document.querySelector('h2');
+      const btn = document.querySelector('button');
+      const h2 = document.querySelector('h2');
+      const body = document.querySelector('body');
 
-      function ranRGB(){
-        return Math.floor(Math.random()*256);
-      }
+      btn.addEventListener('click', ()=>{
+        
+        const rColor = Math.floor(Math.random()*256);
+        const gColor = Math.floor(Math.random()*256);
+        const bColor = Math.floor(Math.random()*256);
 
-      btn.addEventListener('click', function(){
-        let ranColor = `rgb(${ranRGB()}, ${ranRGB()}, ${ranRGB()})`;
-
-        document.body.style.backgroundColor = ranColor;
-        h2.textContent = `rgb(${ranRGB()}, ${ranRGB()}, ${ranRGB()})`;
-      });
+        body.style.backgroundColor = `rgb(${rColor}, ${gColor}, ${bColor})`;
+        h2.innerText = `rgb(${rColor}, ${gColor}, ${bColor})`;
+        
+      })
     </script>
   </body>
 </html>
